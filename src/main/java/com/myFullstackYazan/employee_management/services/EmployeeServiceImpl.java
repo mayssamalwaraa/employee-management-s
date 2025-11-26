@@ -75,7 +75,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     Department department = departmentRepo.findById(employeeCreate.departmentId())
         .orElseThrow(() -> CustomResponseException.ResourceNotFound(
-            "Department with id " + employeeCreate.departmentId() + " not found"
+            "Department with id " + employeeCreate.departmentId() + " not " +
+                "found"
         ));
 
     String token = UUID.randomUUID().toString();
